@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The Complete Job Seeker's Playbook — All Levels, All Paths</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0f0e0d;--paper:#f6f3ee;--cream:#ece8df;--surface:#fff;
+  --red:#c84b2f;--red-bg:#fdf0ec;--red-dim:#e8977f;--red-border:#f5c4ba;
+  --green:#2a6644;--green-bg:#edf5f0;--green-dim:#7ab89a;--green-border:#b8ddc9;
+  --blue:#1a4a7a;--blue-bg:#eaf1f9;--blue-dim:#7aacd4;--blue-border:#b5d4f4;
+  --amber:#7a4a00;--amber-bg:#fef5e4;--amber-border:#e0b96d;
+  --purple:#4a2d8a;--purple-bg:#f0ecfb;--purple-border:#c5b8f0;
+  --teal:#0f5a52;--teal-bg:#e8f5f3;--teal-border:#89cec8;
+  --border:rgba(15,14,13,0.11);--border-md:rgba(15,14,13,0.2);
+  --muted:#6b6560;--radius:10px;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);font-size:16px;line-height:1.7}
+
+/* HERO */
+.hero{background:var(--ink);color:var(--paper);padding:56px 40px 48px;position:relative;overflow:hidden}
+.hero::before{content:'';position:absolute;top:-80px;right:-80px;width:380px;height:380px;border-radius:50%;border:70px solid rgba(200,75,47,0.15)}
+.hero::after{content:'';position:absolute;bottom:-50px;left:25%;width:200px;height:200px;border-radius:50%;border:45px solid rgba(200,75,47,0.08)}
+.hero-eyebrow{font-family:'Syne',sans-serif;font-size:10.5px;letter-spacing:0.2em;text-transform:uppercase;color:var(--red-dim);margin-bottom:16px}
+.hero h1{font-family:'Syne',sans-serif;font-size:clamp(26px,4.5vw,44px);font-weight:800;line-height:1.1;margin-bottom:14px;max-width:620px}
+.hero h1 em{color:var(--red-dim);font-style:normal}
+.hero-sub{font-size:14.5px;color:rgba(246,243,238,0.6);max-width:560px;line-height:1.65;margin-bottom:28px}
+.toc{display:flex;flex-wrap:wrap;gap:7px;position:relative;z-index:1}
+.toc a{font-family:'Syne',sans-serif;font-size:11px;font-weight:600;letter-spacing:0.04em;color:var(--paper);background:rgba(255,255,255,0.09);border:1px solid rgba(255,255,255,0.18);padding:5px 13px;border-radius:99px;text-decoration:none;transition:background .2s,border-color .2s}
+.toc a:hover{background:var(--red);border-color:var(--red)}
+
+/* AUDIENCE BADGES */
+.badge-row{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}
+.badge{font-family:'Syne',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;padding:3px 10px;border-radius:99px;border:1px solid}
+.badge-all{color:var(--ink);background:var(--cream);border-color:var(--border-md)}
+.badge-remote{color:var(--blue);background:var(--blue-bg);border-color:var(--blue-border)}
+.badge-local{color:var(--green);background:var(--green-bg);border-color:var(--green-border)}
+.badge-freelance{color:var(--purple);background:var(--purple-bg);border-color:var(--purple-border)}
+
+/* WRAP + SECTIONS */
+.wrap{max-width:800px;margin:0 auto;padding:0 28px}
+.section{padding:50px 0 16px;border-top:1.5px solid var(--border);margin-top:0}
+.section:first-of-type{border-top:none}
+
+.sec-meta{display:flex;align-items:center;gap:12px;margin-bottom:8px}
+.sec-num{font-family:'Syne',sans-serif;font-size:10.5px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;padding:3px 10px;border-radius:99px;border:1px solid;flex-shrink:0}
+.sec-num.red{color:var(--red);background:var(--red-bg);border-color:var(--red-dim)}
+.sec-num.green{color:var(--green);background:var(--green-bg);border-color:var(--green-dim)}
+.sec-num.blue{color:var(--blue);background:var(--blue-bg);border-color:var(--blue-dim)}
+.sec-num.amber{color:var(--amber);background:var(--amber-bg);border-color:var(--amber-border)}
+.sec-num.purple{color:var(--purple);background:var(--purple-bg);border-color:var(--purple-border)}
+.sec-num.teal{color:var(--teal);background:var(--teal-bg);border-color:var(--teal-border)}
+.sec-num.ink{color:var(--paper);background:var(--ink);border-color:var(--ink)}
+.sec-title{font-family:'Syne',sans-serif;font-size:21px;font-weight:700;line-height:1.2}
+.sec-intro{font-size:14.5px;color:var(--muted);margin:8px 0 22px;max-width:640px;line-height:1.65}
+
+h3{font-family:'Syne',sans-serif;font-size:14px;font-weight:700;margin:24px 0 10px;color:var(--ink);letter-spacing:0.01em}
+
+/* COMPARE */
+.compare{display:grid;grid-template-columns:1fr 1fr;gap:9px;margin-bottom:12px}
+@media(max-width:540px){.compare{grid-template-columns:1fr}}
+.bad,.good{border-radius:var(--radius);padding:13px 15px}
+.bad{background:#fef2f0;border:1px solid var(--red-border)}
+.good{background:var(--green-bg);border:1px solid var(--green-border)}
+.card-label{font-family:'Syne',sans-serif;font-size:9.5px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;margin-bottom:7px}
+.bad .card-label{color:#a33020}.good .card-label{color:var(--green)}
+.card-text{font-size:13.5px;line-height:1.55}
+.bad .card-text{color:#7a2515}.good .card-text{color:#1e4f34}
+
+/* RULES */
+.rules{list-style:none;margin-bottom:18px}
+.rules li{display:flex;gap:11px;align-items:flex-start;padding:10px 0;border-bottom:1px solid var(--border);font-size:14px;line-height:1.6}
+.rules li:last-child{border-bottom:none}
+.ri{flex-shrink:0;width:21px;height:21px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:10px;font-weight:700;margin-top:1px;border:1px solid}
+.ri.do{background:var(--green-bg);color:var(--green);border-color:var(--green-dim)}
+.ri.dont{background:#fef2f0;color:#a33020;border-color:var(--red-border)}
+.ri.tip{background:var(--blue-bg);color:var(--blue);border-color:var(--blue-dim)}
+.ri.warn{background:var(--amber-bg);color:var(--amber);border-color:var(--amber-border)}
+.rt strong{font-weight:500;color:var(--ink)}
+.rt .note{display:block;font-size:12.5px;color:var(--muted);margin-top:2px}
+
+/* TAGS */
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin:8px 0 16px}
+.tag{font-size:12.5px;font-weight:500;padding:3px 11px;border-radius:99px;border:1px solid}
+.tag.r{background:#fef2f0;color:#a33020;border-color:var(--red-border)}
+.tag.g{background:var(--green-bg);color:var(--green);border-color:var(--green-border)}
+.tag.b{background:var(--blue-bg);color:var(--blue);border-color:var(--blue-border)}
+.tag.a{background:var(--amber-bg);color:var(--amber);border-color:var(--amber-border)}
+.tag.p{background:var(--purple-bg);color:var(--purple);border-color:var(--purple-border)}
+.tag.n{background:var(--cream);color:var(--ink);border-color:var(--border-md)}
+
+/* SCRIPTS */
+.script{background:var(--ink);color:var(--paper);border-radius:var(--radius);padding:16px 19px 16px 22px;margin-bottom:12px;position:relative}
+.script::before{content:'"';position:absolute;top:6px;left:14px;font-family:'Syne',sans-serif;font-size:44px;color:rgba(200,75,47,0.3);line-height:1}
+.script-lbl{font-family:'Syne',sans-serif;font-size:9.5px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--red-dim);margin-bottom:8px}
+.script-txt{font-size:13.5px;line-height:1.65;color:rgba(246,243,238,0.88);padding-left:4px}
+.script-txt em{color:var(--red-dim);font-style:normal;font-weight:500}
+
+/* HIGHLIGHT */
+.hl{border-left:3px solid;padding:13px 17px;border-radius:0 var(--radius) var(--radius) 0;margin-bottom:18px}
+.hl p{font-size:14px;line-height:1.6}
+.hl.red{border-color:var(--red);background:var(--red-bg)}.hl.red p{color:#7a2515}
+.hl.green{border-color:var(--green);background:var(--green-bg)}.hl.green p{color:#1e4f34}
+.hl.blue{border-color:var(--blue);background:var(--blue-bg)}.hl.blue p{color:#0d2e52}
+.hl.amber{border-color:var(--amber);background:var(--amber-bg)}.hl.amber p{color:#4a2a00}
+.hl.purple{border-color:var(--purple);background:var(--purple-bg)}.hl.purple p{color:#2d1a5e}
+.hl.teal{border-color:var(--teal);background:var(--teal-bg)}.hl.teal p{color:#073530}
+
+/* INFO CARD */
+.info{background:var(--cream);border:1px solid var(--border);border-radius:var(--radius);padding:16px 18px;margin-bottom:14px}
+.info-title{font-family:'Syne',sans-serif;font-size:12.5px;font-weight:700;margin-bottom:9px;color:var(--ink)}
+.info p,.info li{font-size:13.5px;color:var(--muted);line-height:1.6}
+.info ul{padding-left:17px}.info li{margin-bottom:4px}
+
+/* TABLE */
+.tbl{width:100%;border-collapse:collapse;margin-bottom:18px;font-size:13.5px}
+.tbl th{font-family:'Syne',sans-serif;font-size:10px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);text-align:left;padding:8px 11px;border-bottom:1.5px solid var(--border);background:var(--cream)}
+.tbl td{padding:10px 11px;border-bottom:1px solid var(--border);vertical-align:top;line-height:1.5}
+.tbl tr:last-child td{border-bottom:none}
+
+/* CHECKLIST */
+.check{list-style:none;margin-bottom:20px}
+.check li{display:flex;gap:9px;align-items:flex-start;font-size:13.5px;padding:6px 0;border-bottom:1px dashed var(--border);color:var(--muted);line-height:1.5}
+.check li:last-child{border-bottom:none}
+.check li::before{content:'□';font-size:15px;color:var(--border-md);flex-shrink:0;margin-top:-1px}
+
+/* TWO COL */
+.two-col{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:16px}
+@media(max-width:580px){.two-col{grid-template-columns:1fr}}
+
+/* DIVIDERS */
+hr.soft{border:none;border-top:1px dashed var(--border);margin:18px 0}
+.spacer{height:28px}
+
+/* SECTION DIVIDER LABEL */
+.section-divider{display:flex;align-items:center;gap:14px;margin:48px 0 0;padding-top:48px;border-top:2.5px solid var(--ink)}
+.section-divider-label{font-family:'Syne',sans-serif;font-size:11px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--ink);white-space:nowrap}
+.section-divider-line{flex:1;height:1px;background:var(--border-md)}
+
+/* FOOTER */
+.footer{background:var(--ink);color:rgba(246,243,238,0.45);text-align:center;font-size:13px;padding:26px 40px;margin-top:56px}
+.footer strong{color:var(--red-dim);font-weight:500}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="wrap">
+    <p class="hero-eyebrow">Complete Playbook · All Levels · Every Job Path · 2025–2026</p>
+    <h1>The job seeker's guide<br>for <em>every situation</em></h1>
+    <p class="hero-sub">Everything from resume keywords to salary negotiation — with separate tracks for remote seekers, local/onsite applicants, freelancers, and universal principles that apply to everyone. Research-based, practical, no fluff.</p>
+    <nav class="toc">
+      <a href="#universal">Universal Foundations</a>
+      <a href="#resume">01 Resume & ATS</a>
+      <a href="#linkedin">02 LinkedIn</a>
+      <a href="#coverletter">03 Cover Letter</a>
+      <a href="#interview">04 Interview</a>
+      <a href="#salary">05 Salary Negotiation</a>
+      <a href="#networking">06 Networking</a>
+      <a href="#remote">07 Remote Jobs</a>
+      <a href="#local">08 Local/Onsite Jobs</a>
+      <a href="#freelance">09 Freelance & Gig</a>
+      <a href="#mindset">10 Mindset & Mental Health</a>
+    </nav>
+  </div>
+</div>
+
+<div class="wrap">
+
+<!-- HOW TO READ THIS GUIDE -->
+<div class="section" style="border-top:none;padding-top:36px">
+  <div class="info" style="border-color:var(--border-md)">
+    <div class="info-title">How to read this guide</div>
+    <p>Each section is tagged by who it's most relevant for. Look for the badges:</p>
+    <div class="badge-row" style="margin-top:10px">
+      <span class="badge badge-all">Everyone</span>
+      <span class="badge badge-remote">Remote seekers</span>
+      <span class="badge badge-local">Local / onsite</span>
+      <span class="badge badge-freelance">Freelance / gig</span>
+    </div>
+    <p style="margin-top:8px">Some sections have subsections specific to your path. Skip to what's relevant — or read everything for a full picture.</p>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════
+     UNIVERSAL FOUNDATIONS
+══════════════════════════════════════ -->
+<div class="section-divider" id="universal">
+  <span class="section-divider-label">Part 1 — Universal Foundations</span>
+  <div class="section-divider-line"></div>
+</div>
+<p style="font-size:14px;color:var(--muted);margin-top:12px;margin-bottom:0">These principles apply to every job seeker regardless of path. Master these before anything else.</p>
+
+<!-- SECTION 01 — RESUME -->
+<div class="section" id="resume">
+  <div class="badge-row"><span class="badge badge-all">Everyone</span></div>
+  <div class="sec-meta">
+    <span class="sec-num red">01</span>
+    <h2 class="sec-title">Resume &amp; ATS Keywords</h2>
+  </div>
+  <p class="sec-intro">98% of Fortune 500 companies use ATS software that ranks your resume before any human sees it. ATS scores you on keyword match. The core rule: <strong>show, don't tell</strong> — tool + action + measurable result, every bullet.</p>
+
+  <div class="hl red"><p><strong>The formula:</strong> [Strong action verb] + [specific tool or method] + [measurable result with a number]</p></div>
+
+  <h3>The most important before/after examples</h3>
+  <div class="compare">
+    <div class="bad"><div class="card-label">❌ Flagged by ATS & humans</div><div class="card-text">"I'm a hard worker and fast learner."</div></div>
+    <div class="good"><div class="card-label">✓ Specific · searchable · provable</div><div class="card-text">"I edit high-converting TikTok videos for e-commerce brands using CapCut and Premiere Pro."</div></div>
+  </div>
+  <div class="compare">
+    <div class="bad"><div class="card-label">❌ Weak opener</div><div class="card-text">"Responsible for managing social media."</div></div>
+    <div class="good"><div class="card-label">✓ Action + metric</div><div class="card-text">"Grew Instagram from 2K to 18K followers in 6 months, A/B testing captions and posting 5×/week."</div></div>
+  </div>
+  <div class="compare">
+    <div class="bad"><div class="card-label">❌ Task, not achievement</div><div class="card-text">"Helped with customer service tasks."</div></div>
+    <div class="good"><div class="card-label">✓ Tool + scale + outcome</div><div class="card-text">"Resolved 40+ daily tickets via Zendesk, maintaining a 95% satisfaction rating."</div></div>
+  </div>
+  <div class="compare">
+    <div class="bad"><div class="card-label">❌ Pure filler</div><div class="card-text">"Proven track record of driving results."</div></div>
+    <div class="good"><div class="card-label">✓ Named metric</div><div class="card-text">"Increased email open rates from 18% to 34% by rewriting subject lines and segmenting lists."</div></div>
+  </div>
+  <div class="compare">
+    <div class="bad"><div class="card-label">❌ Vague</div><div class="card-text">"Worked on various marketing campaigns."</div></div>
+    <div class="good"><div class="card-label">✓ Specific + dollar amount</div><div class="card-text">"Launched 3 Facebook ad campaigns targeting 25–40 yr demographics, generating $12K in direct sales."</div></div>
+  </div>
+  <div class="compare">
+    <div class="bad"><div class="card-label">❌ Generic leadership claim</div><div class="card-text">"Led a team of people to success."</div></div>
+    <div class="good"><div class="card-label">✓ Size + outcome + timeline</div><div class="card-text">"Directed a 7-person team to deliver a product relaunch 3 weeks ahead of schedule, generating $80K in first-month revenue."</div></div>
+  </div>
+
+  <h3>Words that get flagged (by ATS and recruiters)</h3>
+  <p style="font-size:13.5px;color:var(--muted);margin-bottom:10px">73% of recruiters report fatigue from these phrases. None of them are searchable skills — they score zero in ATS.</p>
+  <div class="tags">
+    <span class="tag r">Hard worker</span><span class="tag r">Fast learner</span><span class="tag r">Team player</span><span class="tag r">Detail-oriented</span><span class="tag r">Passionate</span><span class="tag r">Go-getter</span><span class="tag r">Self-starter</span><span class="tag r">Motivated</span><span class="tag r">Creative thinker</span><span class="tag r">Dynamic</span><span class="tag r">Responsible for</span><span class="tag r">Helped with</span><span class="tag r">Assisted in</span><span class="tag r">Worked on</span><span class="tag r">Results-driven</span><span class="tag r">Proven track record</span><span class="tag r">Strong work ethic</span><span class="tag r">Synergy</span><span class="tag r">Think outside the box</span><span class="tag r">Go the extra mile</span><span class="tag r">Innovative</span><span class="tag r">Proactive</span>
+  </div>
+
+  <h3>Strong action verbs ATS and humans both reward</h3>
+  <div class="tags">
+    <span class="tag g">Generated</span><span class="tag g">Launched</span><span class="tag g">Spearheaded</span><span class="tag g">Optimised</span><span class="tag g">Streamlined</span><span class="tag g">Grew</span><span class="tag g">Converted</span><span class="tag g">Reduced</span><span class="tag g">Automated</span><span class="tag g">Delivered</span><span class="tag g">Boosted</span><span class="tag g">Directed</span><span class="tag g">Engineered</span><span class="tag g">Expanded</span><span class="tag g">Designed</span><span class="tag g">Built</span><span class="tag g">Secured</span><span class="tag g">Mentored</span><span class="tag g">Implemented</span><span class="tag g">Accelerated</span><span class="tag g">Architected</span><span class="tag g">Negotiated</span><span class="tag g">Diagnosed</span><span class="tag g">Revamped</span><span class="tag g">Exceeded</span><span class="tag g">Transformed</span>
+  </div>
+
+  <h3>ATS-verified keywords by industry</h3>
+  <div class="two-col">
+    <div class="info"><div class="info-title">Marketing &amp; Content</div><div class="tags" style="margin:0"><span class="tag b">SEO</span><span class="tag b">Google Analytics</span><span class="tag b">HubSpot</span><span class="tag b">A/B testing</span><span class="tag b">Content strategy</span><span class="tag b">GTM strategy</span><span class="tag b">Conversion rate</span><span class="tag b">Email marketing</span><span class="tag b">CRM</span><span class="tag b">Paid social</span></div></div>
+    <div class="info"><div class="info-title">Tech &amp; Engineering</div><div class="tags" style="margin:0"><span class="tag b">Python</span><span class="tag b">SQL</span><span class="tag b">Agile</span><span class="tag b">CI/CD</span><span class="tag b">REST API</span><span class="tag b">AWS / GCP</span><span class="tag b">Git</span><span class="tag b">Scrum</span><span class="tag b">TypeScript</span><span class="tag b">Docker</span></div></div>
+    <div class="info"><div class="info-title">Business &amp; Operations</div><div class="tags" style="margin:0"><span class="tag b">Budget forecasting</span><span class="tag b">Stakeholder management</span><span class="tag b">Cross-functional</span><span class="tag b">KPIs</span><span class="tag b">P&L</span><span class="tag b">Process improvement</span><span class="tag b">SLAs</span><span class="tag b">OKRs</span></div></div>
+    <div class="info"><div class="info-title">Design &amp; Creative</div><div class="tags" style="margin:0"><span class="tag b">Figma</span><span class="tag b">Adobe CC</span><span class="tag b">UX research</span><span class="tag b">Wireframing</span><span class="tag b">Premiere Pro</span><span class="tag b">CapCut</span><span class="tag b">Brand identity</span><span class="tag b">User testing</span></div></div>
+  </div>
+
+  <h3>ATS formatting rules (the invisible gatekeepers)</h3>
+  <ul class="rules">
+    <li><span class="ri dont">✕</span><span class="rt"><strong>No tables, columns, or text boxes.</strong><span class="note">ATS converts to plain text first — columns get scrambled, images become garbled characters, your resume becomes unreadable.</span></span></li>
+    <li><span class="ri dont">✕</span><span class="rt"><strong>Never keyword-stuff unnaturally.</strong><span class="note">Modern ATS uses AI to detect unnatural language. Cramming 30 keywords into one paragraph reads as spam and lowers your score.</span></span></li>
+    <li><span class="ri dont">✕</span><span class="rt"><strong>One resume for every job = low ATS scores.</strong><span class="note">52% of target-job keywords are absent from the average unoptimised resume. Each application needs tailoring.</span></span></li>
+    <li><span class="ri do">✓</span><span class="rt"><strong>Mirror the job posting's exact language.</strong><span class="note">If it says "stakeholder management" — write exactly that, not "managing relationships". ATS matches exact terms.</span></span></li>
+    <li><span class="ri do">✓</span><span class="rt"><strong>Include a dedicated Skills section</strong> listing tool names explicitly (Salesforce, not "CRM software"; Python, not "programming language").</span></span></li>
+    <li><span class="ri do">✓</span><span class="rt"><strong>Add a number to every achievement.</strong><span class="note">%, $, time saved, team size, volume — any metric is infinitely better than no metric.</span></span></li>
+    <li><span class="ri do">✓</span><span class="rt"><strong>Use .docx or .pdf only.</strong><span class="note">Never .pages, .txt, or Google Docs links. Many ATS systems only parse Word/PDF properly.</span></span></li>
+  </ul>
+</div>
+
+<!-- SECTION 02 — LINKEDIN -->
+<div class="section" id="linkedin">
+  <div class="badge-row"><span class="badge badge-all">Everyone</span><span class="badge badge-remote">Especially remote seekers</span></div>
+  <div class="sec-meta"><span class="sec-num green">02</span><h2 class="sec-title">LinkedIn Optimisation</h2></div>
+  <p class="sec-intro">87% of recruiters use LinkedIn as their primary sourcing tool. Profiles with optimised headlines and complete sections are 40× more likely to receive opportunities. Recruiters spend just 6 seconds scanning — your headline and first 2 lines of your About section are your entire first impression.</p>
+
+  <h3>Headline — your most important 220 characters</h3>
+  <div class="hl blue"><p><strong>Formula:</strong> [Role/Expertise] | [Specialisation or Key Skill] | [Value Signal or Remote/Location note]</p></div>
+  <div class="compare">
+    <div class="bad"><div class="card-label">❌ Wasted space</div><div class="card-text">"Marketing Manager at ABC Company"</div></div>
+    <div class="good"><div class="card-label">✓ Searchable + specific + value</div><div class="card-text">"B2B Content Strategist | SaaS &amp; Fintech | Turning blogs into pipeline | Open to Remote"</div></div>
+  </div>
+  <div class="compare">
+    <div class="bad"><div class="card-label">❌ Desperation signal</div><div class="card-text">"Remote | WFH | Work From Home | Flexible | Seeking Opportunities"</div></div>
+    <div class="good"><div class="card-label">✓ Skill first, availability second</div><div class="card-text">"Full-Stack Developer (React + Node) | Building scalable apps | Remote-ready, UTC+1"</div></div>
+  </div>
+  <div class="compare">
+    <div class="bad"><div class="card-label">❌ Entry-level with no direction</div><div class="card-text">"Recent Graduate | Looking for Opportunities"</div></div>
+    <div class="good"><div class="card-label">✓ Entry-level with specificity</div><div class="card-text">"Data Analyst | Python &amp; Tableau | Turning raw data into clear decisions | Open to remote &amp; hybrid"</div></div>
+  </div>
+
+  <h3>About section (your 2,600-character story)</h3>
+  <ul class="rules">
+    <li><span class="ri do">✓</span><span class="rt"><strong>Write in first person, conversationally.</strong><span class="note">"I help e-commerce brands..." reads human. "Seasoned professional with extensive experience..." reads like a template recruiter ignores.</span></span></li>
+    <li><span class="ri do">✓</span><span class="rt"><strong>Open with your clearest value statement</strong> in the first two lines — that's all that shows before "see more". Make those lines count.</span></span></li>
+    <li><span class="ri do">✓</span><span class="rt"><strong>End with a call to action.</strong><span class="note">"Feel free to reach out at [email]" or "Open to conversations about [role type]." Tell people exactly what to do next.</span></span></li>
+    <li><span class="ri dont">✕</span><span class="rt"><strong>Don't copy-paste your resume summary.</strong><span class="note">The About section is for your story, personality, and context — not a bulleted list of job duties.</span></span></li>
+    <li><span class="ri dont">✕</span><span class="rt"><strong>Avoid buzzwords even here.</strong><span class="note">"Passionate team player with a proven track record" is just as hollow in your About section as on a resume.</span></span></li>
+  </ul>
+
+  <h3>Profile completeness checklist</h3>
+  <ul class="check">
+    <li>Professional headshot (face fills ~60% of frame — photos generate 14× more views)</li>
+    <li>Custom banner image that reinforces your field or personal brand</li>
+    <li>Optimised headline using the formula above — not just your job title</li>
+    <li>About section in first person with a CTA</li>
+    <li>All experience entries have bullet points with metrics — not just job titles and dates</li>
+    <li>Skills section with 10+ relevant, searchable skills listed</li>
+    <li>At least 2–3 recommendations from managers, clients, or collaborators</li>
+    <li>Open to Work turned on (use "Recruiters only" to avoid alerting your current employer)</li>
+    <li>Custom URL — linkedin.com/in/yourname not linkedin.com/in/abc12345xyz</li>
+    <li>Featured section with portfolio piece, article, case study, or key project</li>
+  </ul>
+
+  <h3>Activity that boosts visibility</h3>
+  <ul class="rules">
+    <li><span class="ri tip">i</span><span class="rt"><strong>Post or comment at least once a month.</strong><span class="note">Active engagement signals relevance to LinkedIn's algorithm and increases how often your profile appears in recruiter searches.</span></span></li>
+    <li><span class="ri tip">i</span><span class="rt"><strong>Commenting thoughtfully outperforms liking</strong> by a significant margin in algorithm terms — and warms cold connections before you reach out.</span></span></li>
+    <li><span class="ri dont">✕</span><span class="rt"><strong>Don't doom-scroll and compare.</strong><span class="note">Seeing others' career wins amplifies self-doubt and wastes job-search hours. Use LinkedIn for outreach and posting, then close the tab.</span></span></li>
+  </ul>
+</div>
+
+<!-- SECTION 03 — COVER LETTER -->
+<div class="section" id="coverletter">
+  <div class="badge-row"><span class="badge badge-all">Everyone</span><span class="badge badge-remote">Remote seekers: add async proof</span><span class="badge badge-local">Local: add cultural fit signals</span></div>
+  <div class="sec-meta"><span class="sec-num amber">03</span><h2 class="sec-title">Cover Letter</h2></div>
+  <p class="sec-intro">A cover letter answers the question a resume can't: "Why this company, why now, and why you?" Keep it under 350 words. One page max. Every sentence should either prove a skill or show you understand the company.</p>
+
+  <div class="hl green"><p><strong>The 4-paragraph structure:</strong> (1) Why this company specifically. (2) Your best relevant achievement with a number. (3) Why you're the right fit for this type of role. (4) Confident close with a CTA.</p></div>
+
+  <h3>Templates for each paragraph</h3>
+  <div class="script"><div class="script-lbl">Opening — show you researched them (not generic)</div><div class="script-txt">"I've followed [Company]'s work in [specific area] — particularly <em>[specific project, value, or recent news]</em>. That focus is exactly why I'm applying for the [Role] position."</div></div>
+  <div class="script"><div class="script-lbl">Achievement paragraph — with a number</div><div class="script-txt">"In my previous role at [Company], I <em>[strong verb + specific outcome + metric]</em>. I achieved this by [brief how — method or tool used]."</div></div>
+  <div class="script"><div class="script-lbl">Fit paragraph — remote version</div><div class="script-txt">"I've worked remotely [for X years / since X] and am fluent in <em>[Slack, Notion, Zoom, Asana]</em>. I default to over-communication and async documentation to keep distributed teams aligned."</div></div>
+  <div class="script"><div class="script-lbl">Fit paragraph — onsite / local version</div><div class="script-txt">"I'm based in [City] and genuinely excited about joining a team I can work alongside in person. I thrive in collaborative, face-to-face environments and am available to start [timeframe]."</div></div>
+  <div class="script"><div class="script-lbl">Confident close — never desperate</div><div class="script-txt">"I'd welcome the chance to discuss how my background in <em>[specific skill]</em> could contribute to [Company]'s goals. I'm available for a call at your convenience."</div></div>
+
+  <h3>Cover letter rules</h3>
+  <ul class="rules">
+    <li><span class="ri do">✓</span><span class="rt"><strong>Address a real person by name.</strong><span class="note">Check LinkedIn or the company site. "Dear Hiring Manager" is fine if you truly can't find a name. Never "Dear Sir/Madam."</span></span></li>
+    <li><span class="ri do">✓</span><span class="rt"><strong>Focus on what you bring them, not what you want.</strong><span class="note">"I'm looking for growth" = you want something. "I can help you do X" = you offer something. Employers care about the second one.</span></span></li>
+    <li><span class="ri do">✓</span><span class="rt"><strong>Name the specific role in the first sentence</strong> — companies often hire for multiple positions simultaneously, and copy-paste errors (wrong company name) are instant rejections.</span></span></li>
+    <li><span class="ri dont">✕</span><span class="rt"><strong>Never repeat your resume.</strong><span class="note">The cover letter provides context and motivation. The resume lists facts. They should complement — not duplicate — each other.</span></span></li>
+    <li><span class="ri dont">✕</span><span class="rt"><strong>Avoid buzzwords even here.</strong><span class="note">"I'm a passionate, results-driven professional" is as hollow in a cover letter as on a resume.</span></span></li>
+    <li><span class="ri dont">✕</span><span class="rt"><strong>Don't explain gaps or weaknesses unprompted.</strong><span class="note">The cover letter is not the place to apologise. Save that for when — if — they ask.</span></span></li>
+    <li><span class="ri dont">✕</span><span class="rt"><strong>Never send the same letter to multiple companies.</strong><span class="note">Generic cover letters are immediately obvious. Even small tweaks — one specific detail, the company name — signal genuine interest.</span></span></li>
+  </ul>
+</div>
+
+<!-- SECTION 04 — INTERVIEW -->
+<div class="section" id="interview">
+  <div class="badge-row"><span class="badge badge-all">Everyone</span><span class="badge badge-remote">Video interviews: extra tips below</span></div>
+  <div class="sec-meta"><span class="sec-num red">04</span><h2 class="sec-title">Interview — Say This, Not That</h2></div>
+  <p class="sec-intro">Interviewers form an impression in the first 90 seconds. Use the STAR method for every experience question — it keeps answers specific, structured, and prevents rambling.</p>
+
+  <h3>The STAR method (the only framework you need)</h3>
+  <table class="tbl">
+    <thead><tr><th style="width:14%">Letter</th><th style="width:28%">Meaning</th><th>Example</th></tr></thead>
+    <tbody>
+      <tr><td><strong>S</strong>ituation</td><td style="color:var(--muted)">Set the brief context</td><td style="color:var(--blue);font-style:italic">"Our client retention had dropped 20% over two quarters."</td></tr>
+      <tr><td><strong>T</strong>ask</td><td style="color:var(--muted)">Your specific role</td><td style="color:var(--blue);font-style:italic">"I was tasked with identifying why and rebuilding our onboarding."</td></tr>
+      <tr><td><strong>A</strong>ction</td><td style="color:var(--muted)">What YOU did (not "we")</td><td style="color:var(--blue);font-style:italic">"I interviewed 12 churned clients, rebuilt the onboarding flow in Notion, and trained the team."</td></tr>
+      <tr><td><strong>R</strong>esult</td><td style="color:var(--muted)">Measurable outcome</td><td style="color:var(--green)">"Retention improved by 34% in the following quarter."</td></tr>
+    </tbody>
+  </table>
+
+  <h3>Phrases that impress interviewers</h3>
+  <ul class="rules">
+    <li><span class="ri do">✓</span><span class="rt">"I'm not familiar with that tool, but I'm eager to learn — I'd take a course and be up to speed within [timeframe]." <span class="note">Honesty + resourcefulness. Far better than bluffing and failing a skills test later.</span></span></li>
+    <li><span class="ri do">✓</span><span class="rt">"In my research on your company, I noticed [specific detail — product, mission, recent news]. That's part of what drew me to this role." <span class="note">Preparation signals. Study competitors if you can — it makes you stand out dramatically.</span></span></li>
+    <li><span class="ri do">✓</span><span class="rt">"What does success look like in this role after 90 days?" <span class="note">A powerful question that shows you think about delivery and outcomes — not just getting hired.</span></span></li>
+    <li><span class="ri do">✓</span><span class="rt">"How is the team currently using AI tools in its workflow, and are there opportunities to learn more?" <span class="note">Shows a forward-thinking mindset. Companies actively integrating AI want employees who embrace it.</span></span></li>
+  </ul>
+
+  <h3>Things to never say in an interview</h3>
+  <ul class="rules">
+    <li><span class="ri dont">✕</span><span class="rt"><strong>"My previous boss/company was terrible."</strong><span class="note">Even if true, it makes you look bitter and raises conflict-management red flags. Say instead: "I'm looking for an environment with more [X]."</span></span></li>
+    <li><span class="ri dont">✕</span><span class="rt"><strong>"I'll do anything!"</strong><span class="note">Sounds desperate and unfocused. Employers want specific, passionate people who know what they want.</span></span></li>
+    <li><span class="ri dont">✕</span><span class="rt"><strong>"I don't have any questions."</strong><span class="note">Signals disinterest. Always have 3–5 thoughtful questions ready. Candidates who ask no questions are routinely passed over.</span></span></li>
+    <li><span class="ri dont">✕</span><span class="rt"><strong>"I'm just looking for any job right now."</strong><span class="note">Frame your answer around why this specific role and company aligns with your goals — even if it's not 100% true.</span></span></li>
+    <li><span class="ri dont">✕</span><span class="rt"><strong>Rambling answers with no structure.</strong><span class="note">Use STAR. Aim for 90–120 seconds per answer. Interviewers mentally disengage after 2 minutes of unstructured speaking.</span></span></li>
+    <li><span class="ri dont">✕</span><span class="rt"><strong>"I didn't have time to prepare."</strong><span class="note">Rule one of interviewing: always prepare. Know the company, the role, and have questions ready. No excuses.</span></span></li>
+  </ul>
+
+  <h3>Video interview tips (remote-specific)</h3>
+  <div class="badge-row" style="margin-bottom:10px"><span class="badge badge-remote">Remote seekers</span></div>
+  <ul class="rules">
+    <li><span class="ri tip">i</span><span class="rt"><strong>Test your tech 30 minutes before.</strong><span class="note">Camera, mic, internet, lighting. A technical failure is avoidable and makes a poor impression before you say a word.</span></span></li>
+    <li><span class="ri tip">i</span><span class="rt"><strong>Solid, neutral background.</strong><span class="note">A bookshelf, plain wall, or subtle virtual background. Your environment signals professionalism before you speak.</span></span></li>
+    <li><span class="ri do">✓</span><span class="rt"><strong>Look at the camera, not the screen,</strong> when speaking. It simulates eye contact. Looking at their face on screen makes you appear to be looking down.</span></span></li>
+    <li><span class="ri do">✓</span><span class="rt"><strong>Have your notes off-screen, not on it.</strong><span class="note">Glancing sideways to read is obvious. Print your key talking points and put them just beside the screen instead.</span></span></li>
+  </ul>
+
+  <h3>Strong questions to ask the interviewer</h3>
+  <ul class="rules">
+    <li><span class="ri tip">i</span><span class="rt">"What does the biggest challenge look like for someone in this role in the first 6 months?"</span></li>
+    <li><span class="ri tip">i</span><span class="rt">"How does the team handle disagreements or give feedback to each other?"</span></li>
+    <li><span class="ri tip">i</span><span class="rt">"What's the biggest difference between the people who succeed here and those who struggle?"</span></li>
+    <li><span class="ri tip">i</span><span class="rt">"What does career progression typically look like from this role?"</span></li>
+  </ul>
+</div>
+
+<!-- SECTION 05 — SALARY -->
+<div class="section" id="salary">
+  <div class="badge-row"><span class="badge badge-all">Everyone</span></div>
+  <div class="sec-meta"><span class="sec-num green">05</span><h2 class="sec-title">Salary Negotiation</h2></div>
+  <p class="sec-intro">Most people who negotiate get more. The offer is the start of a conversation, not a final answer. The employer already chose you — which means you have leverage. Always get the offer in writing before negotiating, and take 24–48 hours to respond.</p>
+
+  <div class="hl green"><p><strong>The golden rule:</strong> Never give your number first. When asked for expected salary, say: "I'd love to understand more about the full scope of the role before discussing compensation — could you share the budgeted range?"</p></div>
+
+  <h3>Word-for-word negotiation scripts</h3>
+  <div class="script"><div class="script-lbl">Receiving a verbal offer — buy time first</div><div class="script-txt">"This is great news — thank you! I'm really excited about this opportunity. Could you send the official offer in writing? I'll review it and get back to you within <em>48 hours</em>."</div></div>
+  <div class="script"><div class="script-lbl">Countering the offer with market data</div><div class="script-txt">"Thank you for the offer — I'm genuinely excited about joining [Company]. Based on my research on market rates for this role and my [X years of specific experience], I was expecting something closer to <em>[10–20% above their number]</em>. Is there flexibility to get there?"</div></div>
+  <div class="script"><div class="script-lbl">When base salary is fixed — pivot to other benefits</div><div class="script-txt">"I understand there may be constraints on the base, and I appreciate your transparency. I'd love to explore other elements — a signing bonus, an extra week of PTO, a <em>professional development budget</em>, or an earlier performance review at 90 days. What's possible?"</div></div>
+  <div class="script"><div class="script-lbl">Negotiating home office / remote stipend</div><div class="script-txt">"Since this is a remote role, I wanted to ask about support for home office setup — equipment, internet allowance, or a monthly workspace stipend. What does the company typically offer remote employees?"</div></div>
+
+  <h3>What's negotiable beyond base salary</h3>
+  <div class="info">
+    <ul>
+      <li>Sign-on / joining bonus</li>
+      <li>Performance review timing (90 days instead of 12 months)</li>
+      <li>Extra paid leave or annual leave days</li>
+      <li>Remote/hybrid work flexibility</li>
+      <li>Home office equipment or monthly stipend</li>
+      <li>Professional development / training budget</li>
+      <li>Start date</li>
+      <li>Equity / stock options (at startups)</li>
+      <li>Health benefits or insurance upgrade</li>
+      <li>Flexible hours or compressed work week</li>
+    </ul>
+  </div>
+
+  <h3>What to never say when negotiating</h3>
+  <ul class="rules">
+    <li><span class="ri dont">✕</span><span class="rt"><strong>"I need X because of my bills / expenses."</strong><span class="note">Your personal costs are irrelevant to an employer. Anchor on market rate and your value delivered — never personal need.</span></span></li>
+    <li><span class="ri dont">✕</span><span class="rt"><strong>Accepting verbally before reading the full written offer.</strong><span class="note">Every negotiated term must be in writing before you say yes. Verbal agreements are hard to enforce.</span></span></li>
+    <li><span class="ri dont">✕</span><span class="rt"><strong>Apologising for negotiating.</strong><span class="note">"Sorry to ask, but..." undermines your position immediately. Negotiating is professional and expected.</span></span></li>
+    <li><span class="ri dont">✕</span><span class="rt"><strong>Giving an ultimatum immediately.</strong><span class="note">Frame everything as collaborative: "Is there flexibility?" not "I won't accept anything below X."</span></span></li>
+  </ul>
+</div>
+
+<!-- SECTION 06 — NETWORKING -->
+<div class="section" id="networking">
+  <div class="badge-row"><span class="badge badge-all">Everyone</span></div>
+  <div class="sec-meta"><span class="sec-num blue">06</span><h2 class="sec-title">Networking Scripts</h2></div>
+  <p class="sec-intro">85% of jobs are filled through networking — many are never posted publicly. Personalised LinkedIn messages get 35%+ response rates. The rule: be short (under 100 words), reference something specific to them, and end with one low-commitment ask.</p>
+
+  <div class="hl blue"><p><strong>The anti-desperation rule:</strong> Never ask for a job in a cold message. Frame every first contact as a request for advice, a conversation, or perspective. That gets responses. "Can you help me get a job?" does not.</p></div>
+
+  <h3>Message templates that get replies</h3>
+  <div class="script"><div class="script-lbl">Cold outreach to someone at a target company</div><div class="script-txt">"Hi [Name], I've been following [Company]'s work in [area] — especially <em>[specific project or post]</em>. I'm exploring roles in [field] and would love to hear your perspective on the team. Would you have 15 minutes sometime this month?"</div></div>
+  <div class="script"><div class="script-lbl">Reaching out to a recruiter directly</div><div class="script-txt">"Hi [Name], I noticed you recruit for [Company / industry]. I'm a [role] with [X years] in [specific skill], currently exploring <em>remote roles</em>. I'd love to connect and be on your radar for relevant openings — happy to share my portfolio if useful."</div></div>
+  <div class="script"><div class="script-lbl">Reconnecting with a dormant contact</div><div class="script-txt">"Hi [Name], I hope you're well! I saw your recent post about <em>[topic]</em> and it really resonated. I'm currently exploring [role type] and would love to catch up. Would you be open to a quick call?"</div></div>
+  <div class="script"><div class="script-lbl">Following up after applying (reaching an insider)</div><div class="script-txt">"Hi [Name], I recently applied for the [Role] at [Company] and saw that you work there. I'd love any insight into the team culture or what you'd recommend I highlight. No pressure at all — just thought it was worth reaching out!"</div></div>
+  <div class="script"><div class="script-lbl">Informational interview (for career changers)</div><div class="script-txt">"Hi [Name], I'm transitioning from [current field] into [target field] and your career path caught my attention. I'd really value 20 minutes to hear how you made the shift. <em>No ask beyond that</em> — just looking to learn from someone who's done it."</div></div>
+
+  <h3>Networking rules</h3>
+  <ul class="rules">
+    <li><span class="ri do">✓</span><span class="rt"><strong>Keep messages under 100 words.</strong><span class="note">InMails under 400 characters have 22% higher response rates. Brevity is respect.</span></span></li>
+    <li><span class="ri do">✓</span><span class="rt"><strong>Reference something specific to them</strong> — a post, a project, a mutual connection. Generic messages get ignored without guilt.</span></span></li>
+    <li><span class="ri do">✓</span><span class="rt"><strong>Follow up once, about a week later,</strong> with a small value-add (a relevant article, an update) — not a copy of the original message.</span></span></li>
+    <li><span class="ri dont">✕</span><span class="rt"><strong>Never send the same message to dozens of people.</strong><span class="note">Copy-paste is immediately detectable. Mass messaging is the fastest way to permanently damage your reputation with a recruiter.</span></span></li>
+    <li><span class="ri dont">✕</span><span class="rt"><strong>Don't connect without a note when cold-reaching.</strong><span class="note">Blank connection requests from strangers have low acceptance rates. Add context — even in the connection note field.</span></span></li>
+    <li><span class="ri tip">i</span><span class="rt"><strong>Engage with their content first</strong> (leave a thoughtful comment on a post) before sending a connection request. It warms the approach significantly.</span></span></li>
+  </ul>
+</div>
+
+<!-- ══════════════════════════════════════
+     PART 2 — PATH-SPECIFIC TRACKS
+══════════════════════════════════════ -->
+<div class="section-divider" id="paths">
+  <span class="section-divider-label">Part 2 — Path-Specific Tracks</span>
+  <div class="section-divider-line"></div>
+</div>
+<p style="font-size:14px;color:var(--muted);margin-top:12px;margin-bottom:0">Choose your track — or read all three. Each covers what's unique to that path beyond the universal foundations above.</p>
+
+<!-- SECTION 07 — REMOTE JOBS -->
+<div class="section" id="remote">
+  <div class="badge-row"><span class="badge badge-remote">Remote seekers</span></div>
+  <div class="sec-meta"><span class="sec-num blue">07</span><h2 class="sec-title">Remote Job Strategy</h2></div>
+  <p class="sec-intro">Remote companies hire differently — they can't assess you in person, so your online presence, written communication, and ability to work independently carry disproportionate weight. You need to prove you can operate without hand-holding before you even get an interview.</p>
+
+  <div class="hl blue"><p><strong>Remote employers hire for:</strong> written communication clarity, self-management, async discipline, tool fluency, and time zone awareness. Signal all five — don't wait for them to ask.</p></div>
+
+  <h3>Where to find remote jobs (best platforms 2025–2026)</h3>
+  <div class="two-col">
+    <div class="info"><div class="info-title">Remote-first job boards</div><ul><li>We Work Remotely (weworkremotely.com)</li><li>Remote.co</li><li>FlexJobs (paid — filters out scams)</li><li>Remotive.com</li><li>Remote OK (remoteok.com)</li><li>Himalayas.app</li></ul></div>
+    <div class="info"><div class="info-title">General boards with remote filters</div><ul><li>LinkedIn (filter: "Remote")</li><li>Indeed (filter: "Remote")</li><li>Wellfound / AngelList (startups)</li><li>Glassdoor (filter: "Remote")</li><li>Working Nomads</li><li>Jobspresso</li></ul></div>
+  </div>
+
+  <h3>Resume — remote-specific additions</h3>
+  <ul class="rules">
+    <li><span class="ri do">✓</span><span class="rt"><strong>Explicitly list remote collaboration tools:</strong> Slack, Notion, Jira, Asana, Zoom, Loom, Linear, Figma, Confluence. These are the keywords remote ATS systems look for.</span></span></li>
+    <li><span class="ri do">✓</span><span class="rt"><strong>Mention any prior remote experience</strong> — even partial. "Managed project delivery across 3 time zones for a distributed team of 8" is powerful proof.</span></span></li>
+    <li><span class="ri do">✓</span><span class="rt"><strong>Add your time zone or location to your summary/header.</strong><span class="note">Remote employers plan meetings and workflows around time zones. Make it easy for them: "Based in Lagos, WAT (UTC+1), available for CET and EST overlap."</span></span></li>
+    <li><span class="ri dont">✕</span><span class="rt"><strong>Don't just say "remote work experience."</strong><span class="note">Describe how: "Coordinated daily standups via Slack with a fully distributed team across 4 countries" is specific proof. The label alone is not.</span></span></li>
+  </ul>
+
+  <h3>LinkedIn — remote-specific signals</h3>
+  <ul class="rules">
+    <li><span class="ri do">✓</span><span class="rt">Add "Remote" or your time zone availability to your headline. <span class="note">Example: "UX Designer | Product &amp; B2B | Remote-ready · UTC+1"</span></span></li>
+    <li><span class="ri do">✓</span><span class="rt">Turn on Open to Work with "Remote" selected as your location preference — it surfaces you in recruiter searches specifically filtering for remote candidates.</span></span></li>
+    <li><span class="ri dont">✕</span><span class="rt"><strong>Don't write "Remote | WFH | Work From Home | Flexible" as your headline.</strong><span class="note">This signals desperation and tells recruiters nothing about your capabilities. Lead with what you do, follow with availability.</span></span></li>
+  </ul>
+
+  <h3>Cover letter — remote proof paragraph</h3>
+  <div class="script"><div class="script-lbl">Add this as your 3rd paragraph for remote applications</div><div class="script-txt">"I've worked remotely [for X years] and am fluent in <em>[specific tools]</em>. I'm deliberate about over-communicating progress, documenting decisions asynchronously, and being reliable across time zones. My work doesn't depend on being in the same room."</div></div>
+
+  <h3>Interview — video-specific preparation</h3>
+  <ul class="rules">
+    <li><span class="ri do">✓</span><span class="rt"><strong>Test your full setup 30 minutes before:</strong> camera angle, mic quality, internet speed, lighting (face lit, not backlit). A technical failure in a remote interview is an avoidable first impression.</span></span></li>
+    <li><span class="ri do">✓</span><span class="rt"><strong>Look at the camera lens when speaking,</strong> not at their face on screen. Camera = eye contact. Screen = looking down.</span></span></li>
+    <li><span class="ri do">✓</span><span class="rt"><strong>Mention remote-specific strengths proactively:</strong> "I'm comfortable working asynchronously and keeping stakeholders aligned via Notion and Slack — I don't need real-time communication to stay productive."</span></span></li>
+    <li><span class="ri do">✓</span><span class="rt"><strong>Ask remote culture questions:</strong> "How does the team handle async communication?" / "What does a typical day look like for someone in this role?" / "How does onboarding work for remote hires?"</span></span></li>
+  </ul>
+
+  <h3>Salary — remote-specific negotiation</h3>
+  <div class="script"><div class="script-lbl">When location-based pay is brought up</div><div class="script-txt">"Based on my research, I'd like to discuss a salary that reflects the value I'll bring to the team rather than being strictly location-adjusted. My output and availability are the same regardless of geography."</div></div>
+  <div class="script"><div class="script-lbl">Negotiating home office / equipment stipend</div><div class="script-txt">"Since this is fully remote, I'd like to discuss support for home office setup — equipment, internet, or a monthly workspace stipend. What does the company typically offer remote team members?"</div></div>
+</div>
+
+<!-- SECTION 08 — LOCAL / ONSITE -->
+<div class="section" id="local">
+  <div class="badge-row"><span class="badge badge-local">Local / onsite seekers</span></div>
+  <div class="sec-meta"><span class="sec-num green">08</span><h2 class="sec-title">Local &amp; Onsite Job Strategy</h2></div>
+  <p class="sec-intro">For onsite roles, in-person impressions and local relationships matter enormously — especially in smaller businesses where walk-in applications and direct referrals still move faster than any online application.</p>
+
+  <div class="hl green"><p><strong>Onsite employers care about:</strong> culture fit, commute reliability, presence and energy in person, long-term stability, and local ties. Lead with these — they don't need to know about your remote tools.</p></div>
+
+  <h3>Where to find local / onsite jobs</h3>
+  <div class="two-col">
+    <div class="info"><div class="info-title">Online — local filters</div><ul><li>Indeed (search by city or ZIP/postcode)</li><li>LinkedIn (filter: "On-site" or specific city)</li><li>Glassdoor (filter by location)</li><li>Google Jobs ("jobs near me")</li><li>Local newspaper classifieds (still active in many markets)</li><li>Facebook Jobs / local community groups</li></ul></div>
+    <div class="info"><div class="info-title">Offline &amp; direct</div><ul><li>Walk-in applications at SMEs (small businesses) — still highly effective</li><li>Local business associations &amp; chambers of commerce</li><li>Industry meetups, trade fairs, career fairs</li><li>Staffing / recruitment agencies (especially for admin, trades, retail)</li><li>Word-of-mouth via existing personal network</li><li>Church, community, and professional groups</li></ul></div>
+  </div>
+
+  <h3>Walk-in applications — when and how</h3>
+  <ul class="rules">
+    <li><span class="ri tip">i</span><span class="rt"><strong>Best for:</strong> retail, hospitality, trades, local SMEs, restaurants, healthcare support roles, admin positions at small companies.</span></span></li>
+    <li><span class="ri do">✓</span><span class="rt"><strong>Dress as if it's an interview</strong> when walking in. You may meet a hiring manager on the spot. First impressions are formed before you hand over a resume.</span></span></li>
+    <li><span class="ri do">✓</span><span class="rt"><strong>Bring a printed resume</strong> — even in 2025. Handing over a physical document leaves a tangible impression that an email cannot.</span></span></li>
+    <li><span class="ri do">✓</span><span class="rt"><strong>Go at quiet times</strong> — mid-morning (10–11am) or mid-afternoon (2–3pm) on weekdays. Avoid lunchtimes, Mondays, and Fridays when managers are busiest or away.</span></span></li>
+    <li><span class="ri do">✓</span><span class="rt"><strong>Ask for the hiring manager by name</strong> if you've researched ahead. "I was hoping to speak briefly with [name] about the [role]" sounds far more purposeful than "I'm here about a job."</span></span></li>
+    <li><span class="ri dont">✕</span><span class="rt"><strong>Don't walk in without researching the company first.</strong><span class="note">Knowing one specific thing about them ("I noticed you recently expanded to a second location") immediately sets you apart from every other walk-in.</span></span></li>
+  </ul>
+
+  <h3>Resume — onsite-specific tips</h3>
+  <ul class="rules">
+    <li><span class="ri do">✓</span><span class="rt"><strong>Include your city / general location</strong> clearly in your header. Hiring managers for onsite roles immediately check whether you're local or will need to relocate.</span></span></li>
+    <li><span class="ri do">✓</span><span class="rt"><strong>Mention commute capacity or local ties</strong> if relevant: "Based in [City], 10 minutes from [area]" removes a common concern for onsite roles.</span></span></li>
+    <li><span class="ri do">✓</span><span class="rt"><strong>Highlight any local work history</strong> — recognisable local companies, well-known organisations, or long tenures signal stability and community roots.</span></span></li>
+    <li><span class="ri dont">✕</span><span class="rt"><strong>Don't list remote collaboration tools as key skills</strong> for purely onsite roles. <span class="note">It signals your mind is elsewhere. Focus on in-person teamwork, physical skills, local knowledge, and face-to-face communication.</span></span></li>
+  </ul>
+
+  <h3>Cover letter — onsite cultural fit signals</h3>
+  <div class="script"><div class="script-lbl">Add this to your fit paragraph for onsite roles</div><div class="script-txt">"I'm based in [City] and genuinely excited about joining a team I can work alongside in person every day. I thrive in collaborative, face-to-face environments and am available to start <em>[timeframe]</em>."</div></div>
+  <div class="script"><div class="script-lbl">Signalling local knowledge (for community-facing roles)</div><div class="script-txt">"As someone who's lived and worked in [City/Area] for [X years], I understand the community this business serves and am personally invested in contributing to it."</div></div>
+
+  <h3>Local networking that works</h3>
+  <ul class="rules">
+    <li><span class="ri do">✓</span><span class="rt"><strong>Attend local industry events, business mixers, and career fairs.</strong><span class="note">In smaller cities and markets, the same people appear repeatedly. One strong conversation can lead to three referrals.</span></span></li>
+    <li><span class="ri do">✓</span><span class="rt"><strong>Join local professional associations</strong> (chambers of commerce, industry bodies, alumni groups). Many jobs circulate internally before being posted publicly.</span></span></li>
+    <li><span class="ri do">✓</span><span class="rt"><strong>Tell everyone you trust that you're looking.</strong><span class="note">Referrals from personal connections move faster and convert at higher rates than cold applications in onsite hiring.</span></span></li>
+    <li><span class="ri do">✓</span><span class="rt"><strong>Partner with local staffing agencies</strong> for admin, trades, and support roles. <span class="note">They have exclusive access to roles that are never posted publicly and can get you in front of hiring managers faster.</span></span></li>
+    <li><span class="ri tip">i</span><span class="rt"><strong>Facebook Groups and WhatsApp communities</strong> for local job seekers are highly active in many African and emerging market cities — don't underestimate them.</span></span></li>
+  </ul>
+
+  <h3>Interview — onsite-specific</h3>
+  <ul class="rules">
+    <li><span class="ri do">✓</span><span class="rt"><strong>Arrive 10–15 minutes early</strong> — not 30, not exactly on time. Use the waiting time to observe the environment and pick up context clues about the culture.</span></span></li>
+    <li><span class="ri do">✓</span><span class="rt"><strong>Be warm and professional with everyone</strong> from the front desk onwards. Hiring managers often ask reception staff how candidates behaved while waiting.</span></span></li>
+    <li><span class="ri do">✓</span><span class="rt"><strong>Signal long-term interest explicitly.</strong><span class="note">Onsite employers fear turnover more than remote employers do. "I'm looking to build something here" is more powerful than "I'm open to opportunities."</span></span></li>
+    <li><span class="ri dont">✕</span><span class="rt"><strong>Don't ask about working from home</strong> in a first interview for a role advertised as fully onsite. It immediately signals you don't want to be there.</span></span></li>
+  </ul>
+</div>
+
+<!-- SECTION 09 — FREELANCE -->
+<div class="section" id="freelance">
+  <div class="badge-row"><span class="badge badge-freelance">Freelance / gig seekers</span></div>
+  <div class="sec-meta"><span class="sec-num purple">09</span><h2 class="sec-title">Freelance &amp; Gig Economy Strategy</h2></div>
+  <p class="sec-intro">38% of the global workforce now freelances. By 2030, freelancers are projected to outnumber traditional employees in several industries. Success in the gig economy requires a different mindset — you're not a job seeker, you're a business owner selling a service.</p>
+
+  <div class="hl purple"><p><strong>Freelance success formula:</strong> Clear niche + strong portfolio + consistent visibility + repeat clients + financial discipline. Volume of gigs matters less than quality of positioning.</p></div>
+
+  <h3>Best platforms by type of work</h3>
+  <div class="two-col">
+    <div class="info"><div class="info-title">General freelance platforms</div><ul><li>Upwork — best for long-term contracts &amp; agencies</li><li>Fiverr — best for productised, packaged services</li><li>Toptal — best for top-tier tech/finance talent</li><li>PeoplePerHour — strong in UK/EU markets</li><li>Guru.com — project-based work</li></ul></div>
+    <div class="info"><div class="info-title">Niche platforms</div><ul><li>99designs / DesignCrowd — graphic design</li><li>Codeable — WordPress development</li><li>Scripted / Contently — writing &amp; content</li><li>SoundBetter — audio &amp; music production</li><li>Contra — commission-free freelancing</li><li>Workana — strong in African &amp; LatAm markets</li></ul></div>
+  </div>
+
+  <h3>Your portfolio is your resume</h3>
+  <ul class="rules">
+    <li><span class="ri do">✓</span><span class="rt"><strong>3–5 strong portfolio pieces beats 20 mediocre ones.</strong><span class="note">Clients decide in seconds. Quality of proof matters far more than volume. If you have no paid work yet, create speculative samples.</span></span></li>
+    <li><span class="ri do">✓</span><span class="rt"><strong>Write case studies, not just samples.</strong><span class="note">Show the problem, your process, and the result. "I designed a landing page" is weak. "I redesigned a SaaS landing page that increased trial signups by 42%" is powerful.</span></span></li>
+    <li><span class="ri do">✓</span><span class="rt"><strong>Collect testimonials aggressively.</strong><span class="note">Even a short sentence from a happy client ("Delivered in 3 days, exactly what I needed") builds credibility no self-description can match.</span></span></li>
+    <li><span class="ri do">✓</span><span class="rt"><strong>Be consistent across platforms.</strong><span class="note">Same bio, same photo, same positioning on Upwork, LinkedIn, Fiverr, and your personal site. Inconsistency signals amateurism.</span></span></li>
+    <li><span class="ri dont">✕</span><span class="rt"><strong>Don't try to serve everyone.</strong><span class="note">A freelancer who does "anything digital" earns less than one who does "email marketing for DTC fashion brands." Narrow niche = higher rates + better matches.</span></span></li>
+  </ul>
+
+  <h3>Pricing and rate negotiation</h3>
+  <ul class="rules">
+    <li><span class="ri do">✓</span><span class="rt"><strong>Research market rates before quoting.</strong><span class="note">Use Glassdoor, Upwork's rate explorer, LinkedIn Salary, and industry Discord/Slack communities to benchmark your field and experience level.</span></span></li>
+    <li><span class="ri do">✓</span><span class="rt"><strong>Quote project-based when possible, not hourly.</strong><span class="note">Hourly pricing punishes you for being faster. A project rate rewards your efficiency and expertise.</span></span></li>
+    <li><span class="ri dont">✕</span><span class="rt"><strong>Don't race to the bottom on price to win clients.</strong><span class="note">Cheap prices attract difficult clients with low budgets and high demands. Better positioning earns better clients at higher rates.</span></span></li>
+    <li><span class="ri warn">!</span><span class="rt"><strong>Set aside 25–30% of every invoice for taxes.</strong><span class="note">Freelancers pay self-employment taxes that traditional employees don't see. Not planning for this is the #1 financial mistake new freelancers make.</span></span></li>
+  </ul>
+
+  <h3>Freelance profile — what wins clients</h3>
+  <div class="compare">
+    <div class="bad"><div class="card-label">❌ Generic Upwork/Fiverr title</div><div class="card-text">"Freelance graphic designer available for any design work"</div></div>
+    <div class="good"><div class="card-label">✓ Niche + outcome-focused</div><div class="card-text">"Brand identity designer for wellness &amp; lifestyle startups — logos, systems, and packaging that convert"</div></div>
+  </div>
+  <div class="compare">
+    <div class="bad"><div class="card-label">❌ Features, not benefits</div><div class="card-text">"I write SEO articles with proper keyword density and on-page optimisation."</div></div>
+    <div class="good"><div class="card-label">✓ Client outcome first</div><div class="card-text">"I write SEO content that ranks — my clients average page-1 rankings within 90 days for 3+ target keywords."</div></div>
+  </div>
+
+  <h3>Financial discipline (the freelance survival skill)</h3>
+  <ul class="rules">
+    <li><span class="ri warn">!</span><span class="rt"><strong>Build a 3–6 month emergency fund</strong> before going full-time freelance. Dry months happen to everyone — having a buffer prevents panic-pricing decisions.</span></span></li>
+    
